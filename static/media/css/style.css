@@ -1,0 +1,38 @@
+h1{
+    display: block;
+    text-align: center;
+    font-size: 30px;
+}
+
+h2{
+    margin-left: 0.5%;
+    display: block;
+    color: #999;
+    
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li{
+    margin : 0.5%;
+    width: 15%;  
+    float: left;
+    text-align: center;
+    line-height : 40 px;
+    background-image :linear-gradient(#EFFBFF,#D9EFF5 );/* dégradé gris clair ->gris foncé */		
+    /*arrondir les  4 coins pareil (on part en haut a gauche puis on tourne dans le sens des aiguilles d'une montre)*/
+    -moz-border-radius:10px 10px 10px 10px;
+    -webkit-border-radius:10px 10px 10px 10px;
+    border-radius:10px 10px 10px 10px;
+    /* fin du bloc pour arrondir les angles */
+}
+
+a{
+    color: black;
+    font-weight: bold;
+}

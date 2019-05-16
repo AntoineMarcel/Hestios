@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+{% load static %}
+   <link rel="stylesheet" href='{% static "media/css/style.css" %}' />
+   <title>{% block title %}Hestios{% endblock %}</title>
+</head>
+<body>
+ {% comment %}
+<header>Vérificateur</header>
+<nav>
+    {% block nav %}
+    <ul>
+        <li><a href="/">Accueil</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/contact/">Contact</a></li>
+    </ul>
+    {% endblock %} 
+</nav>{% endcomment %}
+   <section id="content">
+       {% block content %}{% endblock %}
+   </section>
+<footer>&copy; HESTIOS</footer>
+</body>
+</html>

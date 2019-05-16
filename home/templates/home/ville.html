@@ -1,0 +1,110 @@
+<head><style>
+
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+li{
+    margin : 0.5%;
+    width: 15%;  
+    float: left;
+    text-align: center;
+    line-height : 40 px;
+}
+.retour{
+    background: #79aec8;
+}
+
+</style></head>
+
+{% extends "admin/base_site.html" %}
+
+{% block title %}{{ title }} | {{ site_title|default:_('Recherche') }}{% endblock %}
+
+{% block branding %}
+<h1 id="site-name"><a href="{% url 'admin:index' %}">Administration d'Hestios</a></h1>
+{% endblock %}
+
+{% block content %}
+<h1><a href="/admin/home/villes/" class="retour">Retour</a></h1>
+
+<h1>Vérification pour la ville de {{ test.ville }} ({{ test.cp }})</h1>
+<p><i>Pour rappel cette liste n'est pas fiable a 100% c'est juste un indicateur. Si vous ne voyez aucun service disponible 
+allez verifier sur les plus grosses plateformes et faites une requete de modifications.</i></p>
+
+<h2>Livraison de plats</h2>
+<ul>
+    <li><p><a target="_blank" href="http://deliveroo.fr">Deliveroo</a> est <U>{% if test.deliveroo == False %}<span style="color: red;">non disponible</span>
+    {% else %}<span style="color: green;">disponible</span>{% endif %}</p></U></li>
+
+    <li><p><a target="_blank" href="https://ubereats.com/fr-FR/">Uber Eat</a> est <U>{% if test.ubereat == False %}<span style="color: red;">non disponible</span>
+    {% else %}<span style="color: green;">disponible</span>{% endif %}</p></U></li>
+
+    <li><p><a target="_blank" href="https://just-eat.fr">Just Eat</a> est <U>{% if test.justeat == False %}<span style="color: red;">non disponible</span>
+    {% else %}<span style="color: green;">disponible</span>{% endif %}</p></U></li>
+</ul>
+
+<h2>Livraison de nourriture</h2>
+<ul>
+    <li><p><a target="_blank" href="https://drive.intermarche.com/">Intermarché</a> est <U>{% if test.intermarche == False %}<span style="color: red;">non disponible</span>
+    {% else %}<span style="color: green;">disponible</span>{% endif %}</p></U></li>
+
+    <li><p><a target="_blank" href="https://www.houra.fr">Houra</a> est <U>{% if test.houra == False %}<span style="color: red;">non disponible</span>
+    {% else %}<span style="color: green;">disponible</span>{% endif %}</p></U></li>
+
+    <li><p><a target="_blank" href="https://www.auchandirect.fr">Auchan</a> est <U>{% if test.auchan == False %}<span style="color: red;">non disponible</span>
+    {% else %}<span style="color: green;">disponible</span>{% endif %}</p></U></li>
+
+    <li><p><a target="_blank" href="https://www.monoprix.fr">Monoprix</a> est <U>{% if test.monoprix == False %}<span style="color: red;">non disponible</span>
+    {% else %}<span style="color: green;">disponible</span>{% endif %}</p></U></li>
+
+    <li><p><a target="_blank" href="https://www.carrefour.fr/">Carrefour</a> est <U>{% if test.carrefour == False %}<span style="color: red;">non disponible</span>
+    {% else %}<span style="color: green;">disponible</span>{% endif %}</p></U></li>
+</ul>
+
+<h2>Sorties</h2>
+<ul>
+    <li><p><a target="_blank" href="https://www.onvasortir.com">OnVaSortir</a> est <U>{% if test.ovs == False %}<span style="color: red;">non disponible</span>
+    {% else %}<span style="color: green;">disponible</span>{% endif %}</p></U></li>
+</ul>
+
+<h2>Demandes spécifiques</h2>
+<ul>
+    <li><p><a target="_blank" href="https://allovoisins.com">AlloVoisins</a> est <U>{% if test.allovoisin == False %}<span style="color: red;">non disponible</span>
+    {% else %}<span style="color: green;">disponible</span>{% endif %}</p></U></li>
+
+    <li><p><a target="_blank" href="https://youpijob.fr">Youpijob</a> est <U>{% if test.allovoisin == False %}<span style="color: red;">non disponible</span>
+    {% else %}<span style="color: green;">disponible</span>{% endif %}</p></U></li>
+
+    <li><p><a target="_blank" href="https://www.jemepropose.com">Jemepropose</a> est <U>{% if test.jemepropose == False %}<span style="color: red;">non disponible</span>
+    {% else %}<span style="color: green;">disponible</span>{% endif %}</p></U></li>
+</ul>
+
+<h2>Ménage a domicile</h2>
+<ul>
+    <li><p><a target="_blank" href="https://www.shiva.fr">Shiva</a> est <U>{% if test.shiva == False %}<span style="color: red;">non disponible</span>
+    {% else %}<span style="color: green;">disponible</span>{% endif %}</p></U></li>
+
+    <li><p><a target="_blank" href="https://www.maison-et-services.com">Maison et Services</a> est <U>{% if test.maisonetservices == False %}<span style="color: red;">non disponible</span>
+    {% else %}<span style="color: green;">disponible</span>{% endif %}</p></U></li>
+
+    <li><p><a target="_blank" href="https://www.helpling.fr">Helpling</a> est <U>{% if test.helpling == False %}<span style="color: red;">non disponible</span>
+    {% else %}<span style="color: green;">disponible</span>{% endif %}</p></U></li>
+</ul>
+
+<h2>Auxiliaire de vie</h2>
+<ul>
+    <li><p><a target="_blank" href="https://www.o2.fr/">O2</a> est <U>{% if test.o2 == False %}<span style="color: red;">non disponible</span>
+    {% else %}<span style="color: green;">disponible</span>{% endif %}</p></U></li>
+
+    <li><p><a target="_blank" href="https://www.vitalliance.fr/">Vitalliance</a> est <U>{% if test.vitalliance == False %}<span style="color: red;">non disponible</span>
+    {% else %}<span style="color: green;">disponible</span>{% endif %}</p></U></li>
+</ul>
+
+<h2>Livraison de médicaments</h2>
+<ul>
+    <li><p><a target="_blank" href="https://www.mesmedicamentschezmoi.com">MesMedicamentsChezMoi</a> est <U><span style="color: green;">disponible</span></p></U></li>
+</ul>
+{% endblock content %}

@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Django Highcharts Example</title>
+</head>
+<body>
+    <script src="https://code.highcharts.com/highcharts.src.js"></script>
+    {% comment %} <div id="container" style="height: 300px"></div> {% endcomment %}
+    <br /><br />
+    <div id="container2"></div>
+    <script>
+    /*Highcharts.chart('container', {
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Nombre de personnes selon âge'
+        },
+        xAxis: {
+            categories: [
+                {% for entry in dataset %}'{{ entry.age }} ans'{% if not forloop.last %}, {% endif %}{% endfor %}
+            ]
+        },
+        series: [{
+            name: 'Nombre',
+            data: [
+                {% for entry in dataset %}{{ entry.nombre }}{% if not forloop.last %}, {% endif %}{% endfor %}
+            ],
+            color: 'green'
+        }]
+    });*/
+    Highcharts.chart('container2', {
+        chart: {
+            type: 'pie',
+            height: '550',
+            width: '550',
+            borderColor: '#EBBA95',
+            borderWidth: 2
+        },
+        tooltip: {
+            formatter: function() {
+                var sliceIndex = this.point.index;
+                var sliceName = this.series.chart.axes[0].categories[sliceIndex];
+                return 'Nous avons <b>' + this.y +
+                '</b> clients de <b>' + sliceName + '</b>';
+            }
+        },
+
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: true,
+                    formatter: function() {
+                        var sliceIndex = this.point.index;
+                        var sliceName = this.series.chart.axes[0].categories[sliceIndex];
+                        return sliceName + ' : ' + this.point.percentage + ' %';
+                    },
+                }
+            }
+        },
+        title: {
+            text: 'Nombre de clients selon âge'
+        },
+        xAxis: {
+            categories: [
+                {% for entry in dataset %}'{{ entry.age }} ans'{% if not forloop.last %}, {% endif %}{% endfor %}
+            ]
+        },
+        series: [{
+            name: 'Nombre',
+            data: [
+            {% for entry in dataset %}{{ entry.nombre }}{% if not forloop.last %}, {% endif %}{% endfor %}
+            ],
+
+        }]
+    });
+    </script>
+    <h2>Moyenne d'âge : {{moyenne}} ans</h2> 
+    <h2>Etendue : {{moyenne}} ans</h2> 
+</body>
+</html>
