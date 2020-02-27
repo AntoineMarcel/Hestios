@@ -6,6 +6,8 @@
 
 *Non finalisé.*
 
+___
+
 La plateforme développé et abandonné servait d'outil d'administration. On pouvais y gerer nos utilisateurs, nos relations avec eux ainsi que leurs facturation et des statistiques.
 
 On avait aussi scraper 17 outils pouvant servir aux personnes agées afin d'avoir la liste des villes qu'ils deservent.
@@ -18,3 +20,12 @@ Les outils scraper sont :
 - Shiva, Maison et Services, Helpling pour le ménage à domicile
 - O2, Vitalliance pour les auxiliaires de vie
 - MesMedicamentsChezMoi pour la livraison de médicaments
+
+### Gestion des utilisateurs
+![Gestion](gestion.png)
+
+### Statistiques des utilisateurs
+![Stats](statistiques.png)
+
+### Scraping des villes et des outils
+![Scraping](scraping.png)
