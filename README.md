@@ -1,4 +1,4 @@
-# hestios
+# Hestios
 
 *Side project de services à personnes âgés.*
 
@@ -8,9 +8,9 @@
 
 ___
 
-La plateforme développé et abandonné servait d'outil d'administration. On pouvais y gerer nos utilisateurs, nos relations avec eux ainsi que leurs facturation et des statistiques.
+La plateforme développée et abandonnée servait d'outil d'administration. On pouvait y gérer nos utilisateurs, nos relations avec eux ainsi que leurs facturations et des statistiques.
 
-On avait aussi scraper 17 outils pouvant servir aux personnes agées afin d'avoir la liste des villes qu'ils deservent.
+On avait aussi scrapé 17 outils pouvant servir aux personnes âgées afin d'avoir la liste des villes qu'ils desservent.
 
 Les outils scraper sont : 
 - Deliveroo, Uber Eat, Just Eat pour la livraison de plats
